@@ -8,6 +8,9 @@ import AccountBtn from "./Routes/AccountBtn"
 import Login from './Routes/Login';
 import Register from './Routes/Register';
 import AllBooks from './Routes/AllBooks';
+import AddBooks from './Routes/AddBook';
+import AddBookBtn from './Routes/AddBookBtn';
+
 const App: React.SFC<IAppProps> = (props) => {
 
     const store = tokenstore()
@@ -18,6 +21,7 @@ const App: React.SFC<IAppProps> = (props) => {
                 <div className="d-flex justify-content-end">
                     <Link className="btn btn-primary m-2" to="/">Home</Link>
                     <Link to="/books" className="btn btn-primary m-2"> View Books</Link>
+                    <Route path="/" component={AddBookBtn} />
                     <Route path="/" component={AccountBtn} />
                 </div>
                 <Switch>
@@ -25,6 +29,7 @@ const App: React.SFC<IAppProps> = (props) => {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/books" component={AllBooks} />
+                    <Route exact path="/booksnew" component={AddBooks} />
                 </Switch>
             </Context.Provider>
         </Router>
