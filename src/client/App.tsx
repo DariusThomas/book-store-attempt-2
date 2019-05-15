@@ -10,6 +10,8 @@ import Register from './Routes/Register';
 import AllBooks from './Routes/AllBooks';
 import AddBooks from './Routes/AddBook';
 import AddBookBtn from './Routes/AddBookBtn';
+import Book from './Routes/Book';
+import EditBook from './Routes/EditBook';
 
 const App: React.SFC<IAppProps> = (props) => {
 
@@ -30,6 +32,8 @@ const App: React.SFC<IAppProps> = (props) => {
                     <Route exact path="/register" component={Register} />
                     <Route exact path="/books" component={AllBooks} />
                     <Route exact path="/booksnew" component={AddBooks} />
+                    <Route exact path="/books/:id/update" component={EditBook} />
+                    <Route exact path="/books/:id" component={Book} />
                 </Switch>
             </Context.Provider>
         </Router>

@@ -30,6 +30,7 @@ const AllBooks: React.SFC<IAllBooks> = (props) => {
            return(
                <div className=" border border-info rounded m-2 p-3" key={i}>
            <h2 key={book.id}>{book.title}</h2>
+           <Link className="btn btn-primary" to={`/books/${book.id}`}>Details</Link>
            </div>
             ) 
         })}
