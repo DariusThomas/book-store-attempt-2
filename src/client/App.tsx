@@ -7,7 +7,7 @@ import Home from './Routes/Home';
 import AccountBtn from "./Routes/AccountBtn"
 import Login from './Routes/Login';
 import Register from './Routes/Register';
-// import AllBooks from './Routes/AllBooks';
+import AllBooks from './Routes/AllBooks';
 import AddBooks from './Routes/AddBooks';
 import AddBookBtn from './Routes/AddBookBtn';
 import Book from './Routes/Book';
@@ -30,7 +30,7 @@ const App: React.SFC<IAppProps> = (props) => {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
-                    {/* <Route exact path="/books" component={AllBooks} /> */}
+                    <Route exact path="/books" component={AllBooks} />
                     <Route exact path="/booksnew" component={AddBooks} />
                     <Route exact path="/books/:id/update" component={EditBook} />
                     <Route exact path="/books/:id" component={Book} />
