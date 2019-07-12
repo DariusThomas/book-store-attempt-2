@@ -30,10 +30,10 @@ const App: React.SFC<IAppProps> = (props) => {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
-                    <Route exact path="/books" component={AllBooks} />
                     <Route exact path="/booksnew" component={AddBooks} />
                     <Route exact path="/books/:id/update" component={EditBook} />
                     <Route exact path="/books/:id" component={Book} />
+                    <Route exact path="/books" component={AllBooks} />
                 </Switch>
             </Context.Provider>
         </Router>
