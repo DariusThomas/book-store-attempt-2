@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useState, useEffect, useRef } from "react"
 import { RouteComponentProps, Redirect } from "react-router-dom"
-import { Book } from "./AllBooks"
+import { Book } from "./Allbook"
 import { fwt } from "../utils/api"
 import { Context } from "../utils/context"
 const EditBook: React.SFC<IEditBook> = (props) => {

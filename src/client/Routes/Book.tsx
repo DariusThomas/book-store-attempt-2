@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 import { Link, RouteComponentProps } from "react-router-dom"
-import { Book } from "./AllBooks"
+import { Book } from "./Allbook"
 import { fwt } from "../utils/api"
 import { Context } from "../utils/context"
 const Book: React.SFC<IBook> = (props) => {
