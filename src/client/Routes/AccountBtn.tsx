@@ -5,7 +5,7 @@ import {Link } from "react-router-dom"
 import { fwt } from "../utils/api"
 import {RouteComponentProps} from "react-router-dom"
 const AccBtn: React.SFC<IAccBtnProp> = (props) =>{
-
+ 
     const {user, token ,setUser, setToken} = useContext(Context)
     async function LogoutFunc(){
         try{

@@ -19,12 +19,10 @@ const Register: React.SFC<IRegisterProps> = (props) => {
                 password: password.current.value
             }
             let res = await fwt(token, "/Auth/Register", "POST", registerBody)
-            if (res) {
                 let data = await res.json()
                 setToken(data.token)
                 setUser({userid:data.userid,role:data.role})
                 props.history.push("/")
-            }
         } catch (e) {
             clearInputs()
             console.log(e)

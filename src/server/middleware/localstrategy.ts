@@ -10,7 +10,6 @@ let ls = new LocalStrategy.Strategy({
 }, async (email, password, done) => {
     try {
         let [user]: any = await db.User.userByEmail(email);
-        console.log(user)
         if (user && ComparePassword(password, user.password)) {
             let token = await CreateToken({ userid: user.id })
             let response = {

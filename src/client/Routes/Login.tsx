@@ -2,7 +2,7 @@ import * as React from "react"
 import { useRef } from "react"
 import { fwt } from "../utils/api"
 import { Context } from "../utils/context"
-import {RouteComponentProps, Link } from "react-router-dom"
+import { RouteComponentProps, Link } from "react-router-dom"
 
 const Login: React.SFC<ILoginProps> = (props) => {
     const email = useRef(null)
@@ -17,24 +17,22 @@ const Login: React.SFC<ILoginProps> = (props) => {
                 password: password.current.value
             }
             let res = await fwt(token, "/Auth/Login", "POST", loginBody)
-           if (res) {
-                let data = await res.json()
-                setToken(data.token)
-                setUser({ 
-                    userid:data.userid, 
-                    role:data.role 
-                })
-                props.history.push("/")
-            }
+            let data = await res.json()
+            setToken(data.token)
+            setUser({
+                userid: data.userid,
+                role: data.role
+            })
+            props.history.push("/")
         } catch (e) {
             clearInputs()
             console.log(e)
         }
     }
-function clearInputs(){
-    email.current.value = null;
-    password.current.value = null;
-}
+    function clearInputs() {
+        email.current.value = null;
+        password.current.value = null;
+    }
     return (
         <>
             <div className="h-75 d-flex justify-content-center align-items-center">
@@ -50,7 +48,7 @@ function clearInputs(){
                         </form>
                         <div>
                         </div>
-                        <Link to ="/Register">I don't have an account</Link>
+                        <Link to="/Register">I don't have an account</Link>
                     </div>
                 </div>
             </div>
@@ -61,6 +59,6 @@ function clearInputs(){
 
 export default Login
 
-interface ILoginProps extends RouteComponentProps<{id:string}> {
+interface ILoginProps extends RouteComponentProps<{ id: string }> {
 
 }
