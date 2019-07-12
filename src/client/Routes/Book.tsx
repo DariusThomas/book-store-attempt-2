@@ -1,14 +1,20 @@
 import * as React from "react"
 import { useState, useEffect } from "react"
 import { Link, RouteComponentProps } from "react-router-dom"
-import { Book } from "./AllBooks"
+// import { Book } from "./AllBooks"
 import { fwt } from "../utils/api"
 import { Context } from "../utils/context"
 const Book: React.SFC<IBook> = (props) => {
-
+ 
     const { user, token } = React.useContext(Context)
 
-    const [book, setBook] = useState<Book>({
+    const [book, setBook] = useState<{    id: number,
+        category:string,
+        categoryid: number,
+        title: string,
+        author: string,
+        price: number,
+        _created:string}>({
         id: null,
         categoryid: null,
         title: null,
